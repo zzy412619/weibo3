@@ -32,4 +32,6 @@ Route::post('/users','UsersController@store')->name('users.store');
 Route::get('login','SessionsController@login')->name('login');
 //登录处理
 Route::post('login','SessionsController@store')->name('login');
+//退出登录
+Route::delete('logout','SessionController@destroy')->name('logout');
 
