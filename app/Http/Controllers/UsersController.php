@@ -12,7 +12,7 @@ class UsersController extends Controller
     {
     	return view('users.signup');
     }
-    public function show()
+    public function show(User $user)
     {
     	return view('users.show',compact('user'));
     }

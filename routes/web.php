@@ -20,3 +20,7 @@ Route::get('help','StaticPagesController@help')->name('help');
 Route::get('about','StaticPagesController@about')->name('about');
 //注册
 Route::get('signup','UsersController@signup')->name('signup');
+// 第一个参数为资源名称，第二个参数为控制器名称。
+// Route::resource('users', 'UsersController');
+// 显示用户信息
+Route::get('/users/{user}', 'UsersController@show')->name('users.show');
