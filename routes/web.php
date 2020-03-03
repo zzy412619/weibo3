@@ -28,4 +28,8 @@ Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 // 用户注册页面
 Route::post('/users','UsersController@store')->name('users.store');
 
+// 显示用户登录页面表单
+Route::get('login','SessionsController@login')->name('login');
+//登录处理
+Route::post('login','SessionsController@store')->name('login');
 
