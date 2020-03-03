@@ -33,5 +33,5 @@ Route::get('login','SessionsController@login')->name('login');
 //登录处理
 Route::post('login','SessionsController@store')->name('login');
 //退出登录
-Route::delete('logout','SessionController@destroy')->name('logout');
+Route::delete('logout','SessionsController@logout')->name('logout');
 
