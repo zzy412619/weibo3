@@ -24,3 +24,4 @@ Route::get('signup','UsersController@signup')->name('signup');
 // Route::resource('users', 'UsersController');
 // 显示用户信息
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::get('/store','UsersController@store')->name('users.store');
