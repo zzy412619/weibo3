@@ -12,6 +12,7 @@ class UsersController extends Controller
     {
     	return view('users.signup');
     }
+
     public function show(User $user)
     {
     	return view('users.show',compact('user'));
@@ -19,7 +20,7 @@ class UsersController extends Controller
     //创建注册用户
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required|unique:users|max:50',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed|min:6'
@@ -28,12 +29,9 @@ class UsersController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
         ]);
 
-        session()->flash('success','欢迎,您将在这里开启一段新的旅程~');
-        return redirect()->route('users.show',[$user]);
-
-
+        return redirect()->route('users.show', [$user]);
     }
 }

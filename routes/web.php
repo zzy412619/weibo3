@@ -14,7 +14,8 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// 
+
+
 Route::get('/','StaticPagesController@home')->name('home');
 Route::get('help','StaticPagesController@help')->name('help');
 Route::get('about','StaticPagesController@about')->name('about');
@@ -26,3 +27,5 @@ Route::get('signup','UsersController@signup')->name('signup');
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 // 用户注册页面
 Route::post('/users','UsersController@store')->name('users.store');
+
+
