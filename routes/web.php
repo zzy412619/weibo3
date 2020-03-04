@@ -22,8 +22,8 @@ Route::get('about','StaticPagesController@about')->name('about');
 //注册
 Route::get('signup','UsersController@signup')->name('signup');
 // 第一个参数为资源名称，第二个参数为控制器名称。
-// Route::resource('users', 'UsersController');
-// 显示用户信息
+ //Route::resource('users', 'UsersController');
+// 创建用户的页面
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 // 用户注册页面
 Route::post('/users','UsersController@store')->name('users.store');
@@ -35,3 +35,6 @@ Route::post('login','SessionsController@store')->name('login');
 //退出登录
 Route::delete('logout','SessionsController@logout')->name('logout');
 
+// 编辑用户
+Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{user}','UsersController@update')->name('users.update');
