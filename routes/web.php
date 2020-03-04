@@ -41,3 +41,5 @@ Route::patch('/users/{user}','UsersController@update')->name('users.update');
 
 //显示所有用户列表
 Route::get('/users','UsersController@index')->name('users.index');
+
+Route::delete('/users{user}','UsersController@destroy')->name('users.destroy');
