@@ -11,7 +11,7 @@ class UsersController extends Controller
     {
         //除了下面这些动作外，其他都需要登录才能访问
         $this->middleware('auth',[
-            'excpt' => ['show','signup','store']
+            'excpt' => ['show','signup','store','index']
         ]);
 
         // 只让未登录用户访问注册页面
@@ -78,5 +78,11 @@ class UsersController extends Controller
 
         return redirect()->route('users.show', [$user]);
 
+    }
+    //显示所有用户列表
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
     }
 }

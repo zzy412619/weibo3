@@ -38,3 +38,6 @@ Route::delete('logout','SessionsController@logout')->name('logout');
 // 编辑用户
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}','UsersController@update')->name('users.update');
+
+//显示所有用户列表
+Route::get('/users','UsersController@index')->name('users.index');
