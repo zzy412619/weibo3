@@ -43,3 +43,6 @@ Route::patch('/users/{user}','UsersController@update')->name('users.update');
 Route::get('/users','UsersController@index')->name('users.index');
 
 Route::delete('/users{user}','UsersController@destroy')->name('users.destroy');
+
+//激活路由
+Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
